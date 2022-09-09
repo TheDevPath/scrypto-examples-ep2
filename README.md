@@ -19,6 +19,8 @@ In the location of your choice run
 This will create a local copy of the repositry that we can mangle and break and investigate to get a better idea what is going on under the hood. This is a fork of the official repository which you can find [here](https://github.com/radixdlt/scrypto-examples)
 
 Navigate to your terminal or powershell to -> `cd core/hello-world`
+Now we can install our dependencies and by running `cargo build`
+If you are familiar with node you can draw paralell between `package.json` = `cargo.toml` and `npm install` = `cargo build`
 
 First lets find out what this ResourceBuilder is along with Bucket, Vault and some new items not seen just yet.
 
@@ -34,6 +36,17 @@ Ok so let's take a stroll through the process I used to find these answers. I'll
 
 ### Key Scrypto Terms To Learn
 
+> To Give Examples that may be more familiar at a high level the following are roughly the same:
+
+- Scrypto Component
+- Ethereum Smart Contract
+- Cloud Functions
+  Based on the following perspective:
+
+> They all expose a public address which you can access to execute computation on the network.
+
+> You pay a fee for the computation required to run you function.
+
 - Package: a collection of blueprints that can be deployed to the radix network **hasAddress**
 - Blueprint! as the name implies this is your set of instructions your code **notAddressable**
 - Component a component is the stateful intantiated instance of a blueprint! **hasAddress**
@@ -45,4 +58,3 @@ Ok so let's take a stroll through the process I used to find these answers. I'll
 - Resources special data type in scrypto
 - Vault : permanent resource container
 - Bucket : temporary resource container
-- Badges / Proofs
