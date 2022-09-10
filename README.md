@@ -1,6 +1,8 @@
 ## Learn Scrypto Episode 2 - A Peek Under the Hood
 
-Picking up where we left off in episode 1 let's dig a little deeper and take a look under the hood for a minute to better understand what was created for us in our generated blueprint! and learn how to find more options and capabilities that we get from the scrypto libraries and radix engine.
+Picking up where we left off in episode 1 let's dig a little deeper and take a look under the hood for a minute to better understand what was created for us in our generated blueprint!
+
+Learn how to find more options and capabilities that we get from the scrypto libraries and radix engine, thus empowering us to compose new blueprints.
 
 ### What you will Learn
 
@@ -8,7 +10,7 @@ Picking up where we left off in episode 1 let's dig a little deeper and take a l
 2. How to clone example blueprints and how to utilize them
 3. How to begin composing your own blueprints
 
-> Bonus - The process behind understanding what a piece of code is doing and how to figure it out, potentially without even knowing a particular language or library or framework or api... you see where this is leading. We are expected to know so much as developers the only way to really thrive is to learn how to quickly find the answers without driving yourself crazy. **Key takeaway the process is the important part of this lesson.**
+> Bonus - The process behind understanding what a piece of code is doing and how to figure it out, potentially without even knowing a particular language or library or framework or api... you see where this is leading. We are expected to know so much as developers the way to really thrive is to learn how to quickly find the answers without driving yourself crazy. **Key takeaway the process is the important part of this lesson.**
 
 > ## Step 1. Clone the scrypto-examples repository
 
@@ -18,11 +20,21 @@ In the location of your choice run
 
 This will create a local copy of the repositry that we can mangle and break and investigate to get a better idea what is going on under the hood. This is a fork of the official repository which you can find [here](https://github.com/radixdlt/scrypto-examples)
 
-Navigate to your terminal or powershell to -> `cd core/hello-world`
-Now we can install our dependencies and by running `cargo build`
-If you are familiar with node you can draw paralell between `package.json` = `cargo.toml` and `npm install` = `cargo build`
+Navigate your terminal or powershell to -> `cd core/hello-world`
+
+Now we can install our dependencies by running `cargo build`
+
+> **NOTE** If you are familiar with node you can draw paralell between
+> `package.json` = `cargo.toml` and `npm install` = `cargo build`
+
+Now we have a project we can deploy and interact with via the `resim` radix engine simulator.
 
 First lets find out what this ResourceBuilder is along with Bucket, Vault and some new items not seen just yet.
+
+We can do this a couple ways:
+
+1. Using our IDE to inspect the code brought in with our cargo crates
+2. Find the package documentation - which is [here](https://radixdlt.github.io/radixdlt-scrypto/scrypto/index.html)
 
 Bucket and Vault will look ordinary enough if you've worked in other languages with a type system and we will look at how to see what these custom types and others that are provided in scypto give us.
 
@@ -34,6 +46,18 @@ And then there's this `-> ComponentAddress` in the instantiation function the ar
 
 Ok so let's take a stroll through the process I used to find these answers. I'll show you how to figure out what things are in the example blueprints and how you can go about beginning to compose your own custom blueprint logic.
 
+> ### Useful Docs Links
+>
+> scrypto crate docs -
+> https://radixdlt.github.io/radixdlt-scrypto/scrypto/index.html
+>
+> radix_engine crate docs -
+> https://radixdlt.github.io/radixdlt-scrypto/radix_engine/index.html
+>
+> sbor crate docs - https://radixdlt.github.io/radixdlt-scrypto/sbor/index.html
+>
+> Create a Basic Resource - https://radixdlt.github.io/radixdlt-scrypto/sbor/index.html
+
 ### Key Scrypto Terms To Learn
 
 > To Give Examples that may be more familiar at a high level the following are roughly the same:
@@ -41,11 +65,12 @@ Ok so let's take a stroll through the process I used to find these answers. I'll
 - Scrypto Component
 - Ethereum Smart Contract
 - Cloud Functions
-  Based on the following perspective:
+
+  _Based on the following perspective:_
 
 > They all expose a public address which you can access to execute computation on the network.
-
-> You pay a fee for the computation required to run you function.
+>
+> You pay a fee for the computation required to run your function.
 
 - Package: a collection of blueprints that can be deployed to the radix network **hasAddress**
 - Blueprint! as the name implies this is your set of instructions your code **notAddressable**
