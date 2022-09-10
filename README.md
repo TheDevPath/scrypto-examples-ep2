@@ -1,18 +1,18 @@
-## Learn Scrypto Episode 2 - A Peek Under the Hood
+# Learn Scrypto Episode 2 :microscope: A Peek Under the Hood :dna:
 
 Picking up where we left off in episode 1 let's dig a little deeper and take a look under the hood for a minute to better understand what was created for us in our generated blueprint!
 
 Learn how to find more options and capabilities that we get from the scrypto libraries and radix engine, thus empowering us to compose new blueprints.
 
-### What you will Learn
+## :brain: What you will Learn
 
 1. How to find and work with built in scrypto features
-2. How to clone example blueprints and how to utilize them
+2. How to utilize example blueprints
 3. How to begin composing your own blueprints
 
-> Bonus - The process behind understanding what a piece of code is doing and how to figure it out, potentially without even knowing a particular language or library or framework or api... you see where this is leading. We are expected to know so much as developers the way to really thrive is to learn how to quickly find the answers without driving yourself crazy. **Key takeaway the process is the important part of this lesson.**
+> Bonus - The process behind understanding what a piece of code is doing and how to figure it out, potentially without even knowing a particular language or library or framework or api... you see where this is leading. We are expected to know so much as developers the way to really thrive is to learn how to quickly find answers without driving yourself crazy. **Key takeaway: the process is the important part of this lesson.**
 
-> ## Step 1. Clone the scrypto-examples repository
+### Step 1. Clone the scrypto-examples repository
 
 In the location of your choice run
 
@@ -38,13 +38,23 @@ We can do this a couple ways:
 
 Bucket and Vault will look ordinary enough if you've worked in other languages with a type system and we will look at how to see what these custom types and others that are provided in scypto give us.
 
-But what's with the :: well in rust this is a way to interact with namespaces and ResourceBuilder is a namespace we can acces in the Scrypto library we get from the Scrypto Cargo package.
+But what's with the :: well in rust this is a way to interact with namespaces and ResourceBuilder is a public struct we can access from the Scrypto Crate namespace. ie if you were to write it all the way out it would look like `scrypto::resource::ResourceBuilder`
 
-notice in this line `let my_bucket: Bucket = ResourceBuilder::new_fungible()` there is already a type of Bucket being infered then the :: allows us to access the ResourceBuilder namespace and call the new_fungible() function.
+Notice in this line `let my_bucket: Bucket = ResourceBuilder::new_fungible()` there is a type of Bucket being infered then the :: allows us to access the ResourceBuilder struct and call the new_fungible() function.
 
 And then there's this `-> ComponentAddress` in the instantiation function the arrow indicates the return type of our instantiate function which is a custom type of ComponentAddress
 
-Ok so let's take a stroll through the process I used to find these answers. I'll show you how to figure out what things are in the example blueprints and how you can go about beginning to compose your own custom blueprint logic.
+Ok so let's take a stroll through the process I use to find these answers. I'll show you how to figure out what things are in the example blueprints and how you can go about beginning to compose your own custom blueprint logic.
+
+### Step 2. Utilize Example Blueprints
+
+The reason I set this project up using the examples reposityory rather than just generating a new project with the Scrypto CLI tool is so that we can learn the first phase of utilizing new tech.
+
+:jigsaw: **Following patterns** can help you produce demonstratable results faster, build confidence and ultimately lead to the greater understanding needed to compose your own logic from scratch with a lot less headache.
+
+### Step 3. Compose Your Own Blueprints
+
+This is where coding gets really fun, once you get comfortable composing your own logic you get to be creative and launch :rocket: those amazing ideas you come up with!
 
 > ### Useful Docs Links
 >
@@ -57,6 +67,10 @@ Ok so let's take a stroll through the process I used to find these answers. I'll
 > sbor crate docs - https://radixdlt.github.io/radixdlt-scrypto/sbor/index.html
 >
 > Create a Basic Resource - https://radixdlt.github.io/radixdlt-scrypto/sbor/index.html
+>
+> Half-hour to learn Rust - https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+>
+> The Rust Reference - https://doc.rust-lang.org/nightly/reference/introduction.html
 
 ### Key Scrypto Terms To Learn
 
@@ -72,14 +86,12 @@ Ok so let's take a stroll through the process I used to find these answers. I'll
 >
 > You pay a fee for the computation required to run your function.
 
-- Package: a collection of blueprints that can be deployed to the radix network **hasAddress**
-- Blueprint! as the name implies this is your set of instructions your code **notAddressable**
-- Component a component is the stateful intantiated instance of a blueprint! **hasAddress**
+- **Package** - a collection of blueprints that can be deployed to the radix network **hasAddress**
+- **Blueprint!** - as the name implies this is your set of instructions your code **notAddressable**
+- **Component** - a component is the stateful intantiated instance of a blueprint! **hasAddress**
 
-- Accounts Components instantiated from a special Account blueprint!
+- **Account** - Components instantiated from a special Account blueprint!
 
-- Transaction Manifest
-
-- Resources special data type in scrypto
-- Vault : permanent resource container
-- Bucket : temporary resource container
+- **Resources** - special data type in scrypto
+- **Vault** - permanent resource container
+- **Bucket** - temporary resource container
