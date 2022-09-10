@@ -20,7 +20,7 @@ In the location of your choice run
 
 This will create a local copy of the repositry that we can mangle and break and investigate to get a better idea what is going on under the hood. This is a fork of the official repository which you can find [here](https://github.com/radixdlt/scrypto-examples)
 
-Navigate your terminal or powershell to -> `cd core/hello-world`
+Navigate your terminal or powershell to -> `cd scrypto-examples-ep2/core/hello-world`
 
 Now we can install our dependencies by running `cargo build`
 
