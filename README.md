@@ -18,7 +18,7 @@ In the location of your choice run
 
 `git clone git@github.com:TheDevPath/scrypto-examples-ep2.git`
 
-This will create a local copy of the repositry that we can mangle and break and investigate to get a better idea what is going on under the hood. This is a fork of the official repository which you can find [here](https://github.com/radixdlt/scrypto-examples)
+This will create a local copy of the repository that we can mangle and break and investigate to get a better idea what is going on under the hood. This is a fork of the official repository which you can find [here](https://github.com/radixdlt/scrypto-examples)
 
 Navigate your terminal or powershell to -> `cd scrypto-examples-ep2/core/hello-world`
 
@@ -29,7 +29,7 @@ Now we can install our dependencies by running `cargo build`
 
 Now we have a project we can deploy and interact with via the `resim` radix engine simulator.
 
-First lets find out what this ResourceBuilder is along with Bucket, Vault and some new items not seen just yet.
+First up let's find out what this ResourceBuilder looks like along with Bucket, Vault and some new items not seen just yet.
 
 We can do this a couple ways:
 
@@ -48,7 +48,7 @@ Ok so let's take a stroll through the process I use to find these answers. I'll 
 
 ### Step 2. Utilize Example Blueprints
 
-The reason I set this project up using the examples reposityory rather than just generating a new project with the Scrypto CLI tool is so that we can learn the first phase of utilizing new tech.
+The reason I set this project up using the examples repository rather than just generating a new project with the Scrypto CLI tool is so that we can learn the first phase of utilizing new tech.
 
 :jigsaw: **Following patterns** can help you produce demonstratable results faster, build confidence and ultimately lead to the greater understanding needed to compose your own logic from scratch with a lot less headache.
 
