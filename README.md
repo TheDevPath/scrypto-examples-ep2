@@ -20,7 +20,11 @@ In the location of your choice run
 
 This will create a local copy of the repository that we can mangle and break and investigate to get a better idea what is going on under the hood. This is a fork of the official repository which you can find [here](https://github.com/radixdlt/scrypto-examples)
 
-Navigate your terminal or powershell to -> `cd scrypto-examples-ep2/core/hello-world`
+Open the scrypto-examples-ep2 directory in visual studio code as the workspace directory.
+
+> **NOTE!** Be sure this is the top level directory for your vscode workspace so that the rust-analyzer plugin will work correctly.
+
+Navigate your terminal or powershell to -> `cd core/hello-world`
 
 Now we can install our dependencies by running `cargo build`
 
@@ -29,7 +33,7 @@ Now we can install our dependencies by running `cargo build`
 
 Now we have a project we can deploy and interact with via the `resim` radix engine simulator.
 
-First up let's find out what this ResourceBuilder looks like along with Bucket, Vault and some new items not seen just yet.
+First up let's find out take a look at the hello world project we did in the first episode and find out what the ResourceBuilder looks like along with Bucket, Vault and some new items not seen just yet.
 
 We can do this a couple ways:
 
@@ -42,7 +46,7 @@ But what's with the :: well in rust this is a way to interact with namespaces an
 
 Notice in this line `let my_bucket: Bucket = ResourceBuilder::new_fungible()` there is a type of Bucket being infered then the :: allows us to access the ResourceBuilder struct and call the new_fungible() function.
 
-And then there's this `-> ComponentAddress` in the instantiation function the arrow indicates the return type of our instantiate function which is a custom type of ComponentAddress
+Then there's this `-> ComponentAddress` in the instantiation function the arrow indicates the return type of our instantiate function which is a custom type of ComponentAddress
 
 Ok so let's take a stroll through the process I use to find these answers. I'll show you how to figure out what things are in the example blueprints and how you can go about beginning to compose your own custom blueprint logic.
 
@@ -92,6 +96,6 @@ This is where coding gets really fun, once you get comfortable composing your ow
 
 - **Account** - Components instantiated from a special Account blueprint!
 
-- **Resources** - special data type in scrypto
+- **Resources** - Special Asset data types in Scrypto
 - **Vault** - permanent resource container
 - **Bucket** - temporary resource container
