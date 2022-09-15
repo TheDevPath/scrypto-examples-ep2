@@ -2,7 +2,7 @@
 
 Picking up where we left off in episode 1 let's dig a little deeper and take a look under the hood for a minute to better understand what was created for us in our generated blueprint!
 
-Learn how to find more options and capabilities that we get from the scrypto libraries and radix engine, thus empowering us to compose new blueprints.
+We will look at how to find more of the options and capabilities that we get from the Scrypto libraries and Radix engine. Then make our way through some other example blueprints and identify reusable patterns. In the end hopefully it will feel a bit more comfortable to compose your own custom blueprints.
 
 ## :brain: What you will Learn
 
@@ -22,7 +22,7 @@ This will create a local copy of the repository that we can mangle and break and
 
 Open the scrypto-examples-ep2 directory in visual studio code as the workspace directory.
 
-> **NOTE!** Be sure this is the top level directory for your vscode workspace so that the rust-analyzer plugin will work correctly.
+> **NOTE!** Be sure this is the top level directory for your VSCode workspace so that the rust-analyzer plugin will work correctly.
 
 Navigate your terminal or powershell to -> `cd core/hello-world`
 
@@ -40,6 +40,10 @@ We can do this a couple ways:
 1. Using our IDE to inspect the code brought in with our cargo crates
 2. Find the package documentation - which is [here](https://radixdlt.github.io/radixdlt-scrypto/scrypto/index.html)
 
+To get started open up `core/hello-world/src/lib.rs` this file is our Hello blueprint!
+
+O
+
 Bucket and Vault will look ordinary enough if you've worked in other languages with a type system and we will look at how to see what these custom types and others that are provided in scypto give us.
 
 But what's with the :: well in rust this is a way to interact with namespaces and ResourceBuilder is a public struct we can access from the Scrypto Crate namespace. ie if you were to write it all the way out it would look like `scrypto::resource::ResourceBuilder`
@@ -55,6 +59,10 @@ Ok so let's take a stroll through the process I use to find these answers. I'll 
 The reason I set this project up using the examples repository rather than just generating a new project with the Scrypto CLI tool is so that we can learn the first phase of utilizing new tech.
 
 :jigsaw: **Following patterns** can help you produce demonstratable results faster, build confidence and ultimately lead to the greater understanding needed to compose your own logic from scratch with a lot less headache.
+
+Next let's open up `core/hello-nft/src/lib.rs`
+
+We can quickly see similar elements to our Hello bluprint and also check out a couple new items here.
 
 ### Step 3. Compose Your Own Blueprints
 
