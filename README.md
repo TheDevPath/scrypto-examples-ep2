@@ -30,7 +30,7 @@ Check out all the challenge details [here :eyes:](https://www.radixdlt.com/post/
 
 > Bonus - The process behind understanding what a piece of code is doing and how to figure it out, potentially without even knowing a particular language or library or framework or api... you see where this is leading. We are expected to know so much as developers the way to really thrive is to learn how to quickly find answers without driving yourself crazy. **Key takeaway: the process is the important part of this lesson.**
 
-### Step 1. Project Setup & First Peek
+## Project Setup
 
 In the location of your choice run
 
@@ -50,6 +50,8 @@ Now we can install our dependencies by running `cargo build`
 > `package.json` = `cargo.toml` and `npm install` = `cargo build`
 
 Now we have a project we can deploy and interact with via the `resim` radix engine simulator.
+
+## Step 1. Find & work with built in Scrypto features
 
 First up let's find out take a look at the hello world project we did in the first episode and find out what the _ResourceBuilder_ looks like along with _Bucket_, _Vault_ and some new items not seen just yet.
 
@@ -72,7 +74,7 @@ Then there's this `-> ComponentAddress` in the instantiation function the arrow 
 
 Ok so let's take a stroll through the process I use to find these answers. I'll show you how to figure out what things are in the example blueprints and how you can go about beginning to compose your own custom blueprint logic.
 
-### Step 2. Utilize Example Blueprints
+## Step 2. Utilize Example Blueprints
 
 The reason I set this project up using the examples repository rather than just generating a new project with the Scrypto CLI tool is so that we can learn the first phase of utilizing new tech.
 
@@ -84,7 +86,7 @@ Next let's open up `core/hello-nft/src/lib.rs`
 
 We can quickly see similar elements to our Hello bluprint and also check out a couple new items here. In our first example we created a simple token and give it away for free. In this example we create a set of NFT tickets and sell them for a price. This makes a nice evolution to give us some familiar patterns and introduce a few new concepts.
 
-### Step 3. Compose Your Own Blueprints
+## Step 3. Compose Your Own Blueprints
 
 This is where coding gets really fun, once you get comfortable composing your own logic you get to be creative and launch :rocket: those amazing ideas you come up with!
 
